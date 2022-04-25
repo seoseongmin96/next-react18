@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { userActions } from '../../redux/reducers/userReducer.ts';
-import tableStyles from 'common/style/table.module.css'
+import tableStyles from '../common/styles/table.module.css'
 export default function  Join(){
     const [user, setUser] =useState({
         userid:'', password:'', email:'', name:'', phone:'', birth:'', address:''
@@ -18,12 +18,10 @@ export default function  Join(){
     return <form onSubmit={
         e => {
             e.preventDefault()
-            
             dispatch(userActions.joinRequest(user))
             setUser({
                 userid:'', password:'', email:'', name:'', phone:'', birth:'', address:''
             })
-            window.location.href = "./login"
         }
     }
     >
@@ -46,14 +44,17 @@ export default function  Join(){
                     <td htmlFor=""><b>이메일</b></td>
                     <td><input type="text" name='email' onChange={handleChange}/></td>
                 </tr>
+
                 <tr>
                     <td htmlFor=""><b>이름</b></td>
                     <td><input type="text" name='name' onChange={handleChange}/></td>
                 </tr>
+
                 <tr>
                     <td><b>전화번호</b></td>
                     <td><input type="text" name='phone' onChange={handleChange}/></td>
                 </tr>
+
                 <tr>
                     <td><b>생년월일</b></td>
                     <td><input type="text" name='birth' onChange={handleChange}/></td>

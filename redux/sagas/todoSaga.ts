@@ -62,3 +62,4 @@ export function* watchModifyTodo(){
 export function* watchRemoveTodo(){
     yield takeLatest(todoActions.removeTodoRequest, removeTodo)
 }
+

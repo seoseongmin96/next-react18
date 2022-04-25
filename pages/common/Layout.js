@@ -1,4 +1,4 @@
-import style from "./style/Layout.module.css";
+import style from "./styles/Layout.module.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 export default function Layout({ children }){
@@ -9,4 +9,4 @@ export default function Layout({ children }){
       </div>
   );
 }
-// layout
+

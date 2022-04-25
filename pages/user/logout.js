@@ -1,11 +1,30 @@
 import React from 'react';
-// import 'features/common/style/Button.scss'
+import { useDispatch } from 'react-redux';
+import tableStyles from '../common/styles/table.module.css'
+import { userActions } from '../../redux/reducers/userReducer.ts';
+
 export default function Logout(){
-    return <a className="arrow-btn" style={{cursor:"pointer"}}
-        onClick = { e => {
+    const dispatch = useDispatch()
+    return <form onSubmit={
+        e => {
             e.preventDefault()
-            e.stopPropagation()
-            localStorage.clear(e)
-            window.location.href="/"
-        }}> 로그아웃
-    </a>} 
+            dispatch(userActions.logoutRequest())
+        }
+    }
+    >
+        <table className={tableStyles.table}>
+            <thead>
+                <tr>
+                    <th colSpan={2}><h1>로그아웃</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colSpan={2}><button type="submit">로그아웃</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </form>
+}    
+   

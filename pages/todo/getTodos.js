@@ -2,7 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import TableStyle from "../common/style/table.module.css"
+import TableStyle from "../common/styles/table.module.css"
 
 export default function GetTodos(){
     const columns = ["할일"]

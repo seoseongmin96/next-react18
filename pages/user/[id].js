@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { CloseOutlined } from '@ant-design/icons'
 
 Profile.getInitialProps = async ({ query }) => {
   const {id} = query
@@ -21,18 +20,6 @@ export default function Profile({id}){
       })
     },[])
 
-    /**useEffect(() => {
-        (async () => {
-            console.log(`Next ----> /user/profile/${router.query.id}`);
-            await router.prefetch( `/user/profile/${router.query.id}`, {})
-            .then(res=>{
-                setUser(res.data.user)
-              }).catch(err=>{
-                  
-              })
-        })();
-    }, [router.query.id]);*/
-
     return (<><h1>사용자 프로필</h1>
     <div>
     <label><b>사용자 ID</b></label>
@@ -46,7 +33,6 @@ export default function Profile({id}){
 
     <label><b>전화번호</b></label>
     <input type="text" name='telephone' value={user.telephone}/><br />
-
 
    <br />
     </div>

@@ -4,9 +4,8 @@ import createSagaMiddleware from '@redux-saga/core'
 import rootSaga from './sagas/index.ts'
 import rootReducer from './reducers/index.ts'
 
-const isDev = process.env.NODE_ENV !== 'development'
-// const isProd = process.env.NODE_ENV !== 'production'
-
+const isDev = process.env.NODE_ENV === 'development' 
+// const isProd = process.env.NODE_ENV === 'production' 
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -14,7 +13,7 @@ const createStore = () =>{
     const store = configureStore({
         reducer: rootReducer, 
         devTools: true,
-        middleware: [sagaMiddleware]
+        middleware: [sagaMiddleware],
     })
     sagaMiddleware.run(rootSaga)
     return store
