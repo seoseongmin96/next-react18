@@ -13,7 +13,7 @@ export default function Home() {
         document.getElementById("timeZone").innerHTML = '<h1>현재시간: '+data.now+'<h1>'
       });
     }else{
-      document.getElementById("timeZone").innerHTML = '<h1>환영합니다: '+user.name+'<h1>'
+      document.getElementById("timeZone").innerHTML = '<h1>환영합니다: '+user.user.name+'<h1>'
     }
     
   },[]);
